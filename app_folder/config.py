@@ -2,7 +2,7 @@
 import os
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
-from fastembed.embedding import FlagEmbedding
+from fastembed import TextEmbedding
 from groq import Groq
 
 load_dotenv()
@@ -21,7 +21,7 @@ if not all([QDRANT_URL, QDRANT_API_KEY, GROQ_API_KEY]):
 # Setup
 COLLECTION_NAME = "bhagavad-gita"
 CLIENT = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY, prefer_grpc=True)
-EMBED_MODEL = FlagEmbedding(model_name="thenlper/gte-large")
+EMBED_MODEL = TextEmbedding(model_name="thenlper/gte-large")
 GROQ_CLIENT = Groq(api_key=GROQ_API_KEY)
 GITA_MODEL = "deepseek-r1-distill-llama-70b"
 ARTICLE_MODEL = "gemma2-9b-it"

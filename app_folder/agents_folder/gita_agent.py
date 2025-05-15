@@ -1,6 +1,7 @@
 # app_folder/agents_folder/gita_agent.py
-import warnings
-warnings.filterwarnings("ignore")
+# import warnings
+# warnings.filterwarnings("ignore")
+from fastembed import TextEmbedding  # New (recommended)
 
 from agno.agent import Agent, Message
 from app_folder.config import (
